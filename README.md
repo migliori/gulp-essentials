@@ -76,10 +76,6 @@ The main `gulpfile.js` file loads all tasks and defines global tasks (`watch`, `
 ##Gulp tasks
 
 * ### gulp sass
-<<<<<<< HEAD
-=======
-
->>>>>>> cdebb98479dbc47b0a26b5e3aaa9968d07e4858d
  * **scss** // Compile scss files to css folder - [https://github.com/dlmanning/gulp-sass](https://github.com/dlmanning/gulp-sass)
  * **postcss** // Add css vendor prefix - [https://github.com/postcss/gulp-postcss](https://github.com/postcss/gulp-postcss)
  * **cssnano** // optimise css - [http://cssnano.co](http://cssnano.co)
@@ -88,10 +84,6 @@ The main `gulpfile.js` file loads all tasks and defines global tasks (`watch`, `
  * **sass** [main task]: **`scss`** => **`postcss`** => **`cssnano`** => **`combinecss`**
  
 * ### gulp scripts
-<<<<<<< HEAD
-=======
-
->>>>>>> cdebb98479dbc47b0a26b5e3aaa9968d07e4858d
  * **minifyjs** // Minify js files - [https://github.com/hustxiaoc/gulp-minify](https://github.com/hustxiaoc/gulp-minify)
  * **combinejs** // Concatenates files - [https://github.com/contra/gulp-concat](https://github.com/contra/gulp-concat)
  * **scripts** [main task]: **`minifyjs`** => **`combinejs`**
@@ -100,14 +92,8 @@ The main `gulpfile.js` file loads all tasks and defines global tasks (`watch`, `
 
  * **optimizeimages** // Optimize images - [https://github.com/sindresorhus/gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
  * **images** [main task]: **`optimizeimages`**
-<<<<<<< HEAD
 
 * ### gulp critical
-=======
-
-* ### gulp critical
-
->>>>>>> cdebb98479dbc47b0a26b5e3aaa9968d07e4858d
  [Critical CSS](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery) is an important feature.
 
  **This package generates critical CSS for both HTML and PHP files**.
