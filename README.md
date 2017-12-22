@@ -1,6 +1,6 @@
-#Gulp Essentials
+# Gulp Essentials
 
-Starter project sample with configured Gulp tasks
+**Basic Starter project with essential configured Gulp tasks**
 
 * sass
 * scripts
@@ -9,18 +9,18 @@ Starter project sample with configured Gulp tasks
 
 ## Table of contents
 
-* [Quick start](#Quick start)
-* [What's included](#What's included)
-* [Gulp structure](#Gulp structure)
-* [Gulp tasks](#Gulp tasks)
-  * [gulp sass](#sass)
-  * [gulp scripts](#scripts)
-  * [gulp images](#images)
-  * [gulp critical](#critical)
-* [Extras](#Extras)
-* [Versionning](#Versionning)
-* [Authors](#Authors)
-* [License](#License)
+* [Quick start](#quick-start)
+* [What's included](#whats-included)
+* [Gulp structure](#gulp-structure)
+* [Gulp tasks](#gulp-tasks)
+  * [gulp sass](#gulp-sass)
+  * [gulp scripts](#gulp-scripts)
+  * [gulp images](#gulp-images)
+  * [gulp critical](#gulp-critical)
+* [Extras](#extras)
+* [Versionning](#versionning)
+* [Authors](#authors)
+* [License](#license)
 
 ## Quick start
 
@@ -39,7 +39,7 @@ Starter project sample with configured Gulp tasks
 
 Open your command prompt and call any [Gulp task](#Gulp tasks)
 
-##What's included
+## What's included
 
 Within the download you'll find the following directories and files:
 
@@ -63,12 +63,11 @@ gulp-essentials/
 │   └── scripts.js
 └── test-dir
     ├── carousel.html
-    ├── bootstrap.bundle.min.js
-    ├── bootstrap.js
     └── jumbotron.php
 ```
 
-##Gulp structure
+## Gulp structure
+
 The configuration file defines the location of directories.
 
 The different tasks are separated into specific files in the `/gulp` directory using `gulp-load-plugins`.
@@ -76,52 +75,66 @@ The different tasks are separated into specific files in the `/gulp` directory u
 The main `gulpfile.js` file loads all tasks and defines global tasks (`watch`, `dist`, `default`).
 ##Gulp tasks
 
-* 
-###gulp sass
+* ### gulp sass
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdebb98479dbc47b0a26b5e3aaa9968d07e4858d
  * **scss** // Compile scss files to css folder - [https://github.com/dlmanning/gulp-sass](https://github.com/dlmanning/gulp-sass)
  * **postcss** // Add css vendor prefix - [https://github.com/postcss/gulp-postcss](https://github.com/postcss/gulp-postcss)
  * **cssnano** // optimise css - [http://cssnano.co](http://cssnano.co)
  * **combinecss** // Concatenates files - [https://github.com/contra/gulp-concat](https://github.com/contra/gulp-concat)
  
- * **sass** [main task] **`scss`** => **`postcss`** => **`cssnano`** => **`combinecss`**
-* 
-###gulp scripts
+ * **sass** [main task]: **`scss`** => **`postcss`** => **`cssnano`** => **`combinecss`**
+ 
+* ### gulp scripts
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdebb98479dbc47b0a26b5e3aaa9968d07e4858d
  * **minifyjs** // Minify js files - [https://github.com/hustxiaoc/gulp-minify](https://github.com/hustxiaoc/gulp-minify)
  * **combinejs** // Concatenates files - [https://github.com/contra/gulp-concat](https://github.com/contra/gulp-concat)
- * **scripts** [main task] **`minifyjs`** => **`combinejs`**
-* 
-###gulp images
- * **optimizeimages** // Optimize images - [https://github.com/sindresorhus/gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
- * **images** [main task] **`optimizeimages`**
+ * **scripts** [main task]: **`minifyjs`** => **`combinejs`**
+ 
+* ### gulp images
 
-* 
-###gulp critical
+ * **optimizeimages** // Optimize images - [https://github.com/sindresorhus/gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
+ * **images** [main task]: **`optimizeimages`**
+<<<<<<< HEAD
+
+* ### gulp critical
+=======
+
+* ### gulp critical
+
+>>>>>>> cdebb98479dbc47b0a26b5e3aaa9968d07e4858d
  [Critical CSS](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery) is an important feature.
 
  **This package generates critical CSS for both HTML and PHP files**.
-  * **critical** [main task] **`downloadHtml`** => **`criticalHtml`** => **`criticalPhp`** => **`deleteTemp`**
+  * **critical** [main task]: **`downloadHtml`** => **`criticalHtml`** => **`criticalPhp`** => **`deleteTemp`**
 
  The process is different depending on the file type:
- ####critical CSS for HTML files:
+
+ #### critical CSS for HTML files:
    
-    The critical CSS code is inserted in the `<head>` part of the HTML file.
+  The critical CSS code is inserted in the `<head>` part of the HTML file.
 
-    The file is saved in a `/dist` subdirectory of the original HTML file.
+  The file is saved in a `/dist` subdirectory of the original HTML file.
 
-    ####Critical CSS for PHP files:
+ #### Critical CSS for PHP files:
 
-    The critical CSS code is generated and saved in `[css-dir]/critical/[filename].min.css` where `[css-dir]` is the directory defined in `config.js` for your CSS files, and `[filename]` is the basename of the PHP source file.
+  The critical CSS code is generated and saved in `[css-dir]/critical/[filename].min.css` where `[css-dir]` is the directory defined in `config.js` for your CSS files, and `[filename]` is the basename of the PHP source file.
 
-    Once the critical CSS file is generated, you can add it to your page with a PHP include:
+  Once the critical CSS file is generated, you can add it to your page with a PHP include:
 
-    ```html
+  ```html
     <style type="text/css" media="screen">
     <?php
         // Critical css
         include_once('assets/stylesheets/critical/critical-' . pathinfo(basename($_SERVER['SCRIPT_NAME']), PATHINFO_FILENAME) . '.min.css');
     ?>
     </style>
-    ```
+  ```
 
 ## Extras
 
