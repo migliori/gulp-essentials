@@ -1,0 +1,188 @@
+// ------------------------------------------------------------------------------
+//
+//  # Main colors
+//
+//  List of the template main color palettes
+//
+//  Version: 1.0
+//  Latest update: May 25, 2015
+//
+// ------------------------------------------------------------------------------
+
+// Contextual colors
+// ------------------------------
+
+$text-color: #333;
+
+// Primary palette
+$color-primary-50: adjust-hue(#e3f2fd, -14);
+$color-primary-300: adjust-hue(#64b5f6, -14);
+$color-primary-400: adjust-hue(#42a5f5, -14);
+$color-primary-500: adjust-hue(#2196f3, -14);
+$color-primary-600: adjust-hue(#1e88e5, -14);
+$color-primary-700: adjust-hue(#1976d2, -14);
+$color-primary-800: adjust-hue(#1565c0, -14);
+$color-primary-900: darken(adjust-hue(#09316e, -14), 10%);
+
+// Danger palette
+$color-danger-50: #ffebee;
+$color-danger-300: #e57373;
+$color-danger-400: #ef5350;
+$color-danger-500: #f44336;
+$color-danger-600: #e53935;
+$color-danger-700: #d32f2f;
+$color-danger-800: #c62828;
+$color-danger-900: darken(#b71c1c, 10%);
+
+// Success palette
+$color-success-50: #e8f5e9;
+$color-success-300: #81c784;
+$color-success-400: #66bb6a;
+$color-success-500: #4caf50;
+$color-success-600: #43a047;
+$color-success-700: #388e3c;
+$color-success-800: #2e7d32;
+$color-success-900: darken(#1b5e20, 10%);
+
+// Warning palette
+$color-warning-50: #fbe9e7;
+$color-warning-300: #ff8a65;
+$color-warning-400: #ff7043;
+$color-warning-500: #ff5722;
+$color-warning-600: #f4511e;
+$color-warning-700: #e64a19;
+$color-warning-800: #d84315;
+$color-warning-900: darken(#bf360c, 10%);
+
+// Info palette
+$color-info-50: #e0f7fa;
+$color-info-300: #4dd0e1;
+$color-info-400: #26c6da;
+$color-info-500: #00bcd4;
+$color-info-600: #00acc1;
+$color-info-700: #0097a7;
+$color-info-800: #00838f;
+$color-info-900: darken(#006064, 10%);
+
+// Additional colors
+// ------------------------------
+
+// Pink palette
+$color-pink-50: #fce4ec;
+$color-pink-300: #f06292;
+$color-pink-400: #ec407a;
+$color-pink-500: #e91e63;
+$color-pink-600: #d81b60;
+$color-pink-700: #c2185b;
+$color-pink-800: #ad1457;
+$color-pink-900: darken(#880e4f, 10%);
+
+// Violet palette
+$color-violet-50: #f3e5f5;
+$color-violet-300: #ba68c8;
+$color-violet-400: #ab47bc;
+$color-violet-500: #9c27b0;
+$color-violet-600: #8e24aa;
+$color-violet-700: #7b1fa2;
+$color-violet-800: #6a1b9a;
+$color-violet-900: darken(#4a148c, 10%);
+
+// Purple palette
+$color-purple-50: #ede7f6;
+$color-purple-300: #9575cd;
+$color-purple-400: #7e57c2;
+$color-purple-500: #673ab7;
+$color-purple-600: #5e35b1;
+$color-purple-700: #512da8;
+$color-purple-800: #4527a0;
+$color-purple-900: darken(#311b92, 10%);
+
+// Indigo palette
+$color-indigo-50: #e8eaf6;
+$color-indigo-300: #7986cb;
+$color-indigo-400: #5c6bc0;
+$color-indigo-500: #3f51b5;
+$color-indigo-600: #3949ab;
+$color-indigo-700: #303f9f;
+$color-indigo-800: #283593;
+$color-indigo-900: darken(#1a237e, 10%);
+
+// Blue palette
+$color-blue-50: #e1f5fe;
+$color-blue-300: #4fc3f7;
+$color-blue-400: #29b6f6;
+$color-blue-500: #03a9f4;
+$color-blue-600: #039be5;
+$color-blue-700: #0288d1;
+$color-blue-800: #0277bd;
+$color-blue-900: darken(#01579b, 10%);
+
+// Teal palette
+$color-teal-50: #e0f2f1;
+$color-teal-300: #4db6ac;
+$color-teal-400: #26a69a;
+$color-teal-500: #009688;
+$color-teal-600: #00897b;
+$color-teal-700: #00796b;
+$color-teal-800: #00695c;
+$color-teal-900: darken(#004d40, 10%);
+
+// Green palette
+$color-green-50: #f1f8e9;
+$color-green-300: #aed581;
+$color-green-400: #9ccc65;
+$color-green-500: #8bc34a;
+$color-green-600: #7cb342;
+$color-green-700: #689f38;
+$color-green-800: #558b2f;
+$color-green-900: darken(#33691e, 10%);
+
+// Orange palette
+$color-orange-50: #fff3e0;
+$color-orange-300: #ffb74d;
+$color-orange-400: #ffa726;
+$color-orange-500: #ff9800;
+$color-orange-600: #fb8c00;
+$color-orange-700: #f57c00;
+$color-orange-800: #ef6c00;
+$color-orange-900: darken(#e65100, 10%);
+
+// Amber palette
+$color-amber-50: #fff8e1;
+$color-amber-300: #ffd54f;
+$color-amber-400: #ffca28;
+$color-amber-500: #ffc107;
+$color-amber-600: #ffb300;
+$color-amber-700: #ffa000;
+$color-amber-800: #ff8f00;
+$color-amber-900: darken(#ff6f00, 10%);
+
+// Brown palette
+$color-brown-50: #efebe9;
+$color-brown-300: #a1887f;
+$color-brown-400: #8d6e63;
+$color-brown-500: #795548;
+$color-brown-600: #6d4c41;
+$color-brown-700: #5d4037;
+$color-brown-800: #4e342e;
+$color-brown-900: darken(#3e2723, 10%);
+
+// Grey palette
+$color-grey-50: #fafafa;
+$color-grey-300: #999;
+$color-grey-400: #888;
+$color-grey-500: #777;
+$color-grey-600: #666;
+$color-grey-700: #555;
+$color-grey-800: #444;
+$color-grey-900: darken(#333, 10%);
+
+// Slate palette
+$color-slate-50: #eceff1;
+$color-slate-300: #90a4ae;
+$color-slate-400: #78909c;
+$color-slate-500: #607d8b;
+$color-slate-600: #546e7a;
+$color-slate-700: #455a64;
+$color-slate-800: #37474f;
+$color-slate-900: darken(#263238, 10%);

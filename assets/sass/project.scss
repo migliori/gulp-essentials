@@ -1,0 +1,19 @@
+/* ------------------------------------------------------------------------------
+ *
+ *  # Main project sass file
+ *
+ *  Common sass file with imports
+ *
+ *  Version: 1.0
+ *  Latest update: Dec 20, 2017
+ *
+ * ---------------------------------------------------------------------------- */
+
+/* Import globals*/
+@import 'global/global.scss';
+
+h1 {
+    font-family: 'Berkshire Swash', cursive;
+    color: #34b6a5;
+}
+

@@ -1,0 +1,41 @@
+{
+  "name": "gulp-essentials",
+  "version": "1.0.0",
+  "description": "gulp essentials tasks",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gilles Migliori",
+  "license": "ISC",
+  "url": "https://github.com/migliori/gulp-essentials/issues",
+  "devDependencies": {
+    "autoprefixer": "^7.2.1",
+    "critical": "^1.1.0",
+    "del": "^3.0.0",
+    "gulp": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-remote-src": "^0.4.3",
+    "gulp-rename": "latest",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "lazypipe": "^1.0.1",
+    "run-sequence": "^2.2.0"
+  },
+  "dependencies": {
+    "cssnano": "^3.10.0",
+    "gulp-cache": "^1.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-download": "0.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-ignore": "^2.0.2",
+    "gulp-minify": "^2.1.0",
+    "gulp-subtask": "^0.3.4",
+    "mkdirp": "^0.5.1",
+    "promise": "^8.0.1"
+  }
+}

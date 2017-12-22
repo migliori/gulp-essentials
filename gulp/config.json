@@ -1,0 +1,12 @@
+{
+    "tasksPath": "./gulp",
+
+    "baseDir": ".",
+    "baseUrl": "http://gulp-essentials",
+    "baseCombinedName": "main",
+
+    "sass": "assets/sass",
+    "css": "assets/stylesheets",
+    "scripts": "assets/javascripts",
+    "images": "assets/images"
+}

@@ -1,0 +1,12 @@
+# Built application files
+node_modules/
+
+# Local configuration file
+cgi-bin/
+
+# Log Files
+*.log
+
+# Generated files
+dist/
+test-dir/dist/
