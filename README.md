@@ -31,9 +31,13 @@
 
 ### Installation
 
-* [Download the latest release.](https://github.com/migliori/gulp-essentials/archive/master.zip)
-* Clone the repo: `git clone https://github.com/migliori/gulp-essentials.git`
-* Install with [npm](https://www.npmjs.com/): `npm install gulp-essentials@1.0.0`
+1. [Download the latest release.](https://github.com/migliori/gulp-essentials/archive/master.zip)
+
+ or Clone the repo: `git clone https://github.com/migliori/gulp-essentials.git`
+
+2. Unzip the package content to the root of your project
+
+3. Open command prompt, navigate to your project folder and run [npm](https://www.npmjs.com/): `npm install` to install node_modules.
 
 ### Usage
 
