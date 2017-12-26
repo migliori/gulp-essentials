@@ -1,6 +1,6 @@
 {
   "name": "gulp-essentials",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "gulp essentials tasks: saas, scripts, images, critical (critical css for php/html files)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
