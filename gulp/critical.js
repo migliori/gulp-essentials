@@ -41,15 +41,18 @@ if you get any error:
 
 =======  End of IMPORTANT  ======*/
 
-/* global console, module, require */
+/* global module, require */
+/*jshint loopfunc:true */
 'use strict';
 
 module.exports = function(gulp, plugins, config) {
+    var colors = require('ansi-colors');
     var critical = require('critical').stream;
     var del = require('del');
     var fs = require('fs');
-    var gutil = require('gulp-util');
+    var log = require('fancy-log');
     var mkdirp = require('mkdirp');
+    var request = require('sync-request');
     var runSequence = require('run-sequence');
 
     var criticalSources = [
@@ -76,26 +79,44 @@ module.exports = function(gulp, plugins, config) {
 
     // critical CSS
     gulp.task('downloadHtml', function() {
-        console.log('-------------- DOWNLOAD HTML ' + options.srcDir + ' -----------------');
+        log.info(colors.green('______________DOWNLOAD HTML ' + options.srcDir));
 
         var files = fs.readdirSync(options.srcDir),
             url = options.url,
-            filter = options.srcFilter,
             exclude = options.srcExclude,
-            urls = [],
-            filename;
+            filter = options.srcFilter,
+            filename,
+            match,
+            urls = [];
         for (var i = 0; i < files.length; i++) {
+            match = false;
             filename = files[i];
-            if (filename.indexOf(filter[0]) >= 0 || filename.indexOf(filter[1]) >= 0) {
-                if (exclude.indexOf(filename) === -1 && filename.match(/^critical-/) === null) {
-                    urls.push(url + '/' + filename);
-
-                    console.log('-- found: ', url + '/' + filename);
+            filter.forEach(function(entry) {
+                if (filename.indexOf(entry) > 0) {
+                    match = true;
+                }
+            });
+            if (match === true) {
+                // exclude "exclude", "critical-" and folders
+                if (exclude.indexOf(filename) === -1 && /^critical-/.test(filename) === false && /\.(.*)/.test(filename) === true) {
+                    // test url before push
+                    var res = request('GET', url + '/' + filename);
+                    if (res.statusCode == 200) {
+                        urls.push(url + '/' + filename);
+                        log.info('-- found: ', url + '/' + filename);
+                    } else {
+                        log.error(colors.red(url + '/' + filename + " doesn't exist"));
+                    }
                 }
             }
         }
+        if (urls.length < 1) {
+            log.warn(colors.red('No URL found in ' + url));
+
+            return;
+        }
         mkdirp(options.srcDir + '/dist', function(err) {
-            if (err) console.error(err);
+            if (err) log.error(colors.red(err));
         });
         return plugins
             .download(urls)
@@ -109,7 +130,7 @@ module.exports = function(gulp, plugins, config) {
     });
 
     gulp.task('criticalHtml', function() {
-        console.log('______________criticalHtml');
+        log.info(colors.green('______________criticalHtml'));
         return gulp
             .src(options.srcDir + '/critical-*.html')
             .pipe(
@@ -138,7 +159,7 @@ module.exports = function(gulp, plugins, config) {
                 })
             )
             .on('error', function(err) {
-                gutil.log(gutil.colors.red(err.message));
+                log.error(colors.red(err.message));
             })
             .pipe(
                 plugins.rename(function(path) {
@@ -149,7 +170,7 @@ module.exports = function(gulp, plugins, config) {
     });
 
     gulp.task('criticalPhp', function() {
-        console.log('______________criticalPhp');
+        log.info(colors.green('______________criticalPhp'));
         return gulp
             .src(options.srcDir + '/critical-*.php')
             .pipe(
@@ -178,7 +199,7 @@ module.exports = function(gulp, plugins, config) {
                 })
             )
             .on('error', function(err) {
-                gutil.log(gutil.colors.red(err.message));
+                log.error(colors.red(err.message));
             })
             .pipe(
                 plugins.rename({
@@ -202,11 +223,11 @@ module.exports = function(gulp, plugins, config) {
                 forceCssRules: criticalSources[currentSourceIndex].forceCssRules,
                 srcExclude: criticalSources[currentSourceIndex].exclude
             };
-            console.log('-------------- START CRITICAL ' + currentSourceIndex + '-----------------');
+            log.info(colors.bggreen('-------------- START CRITICAL ' + currentSourceIndex + '-----------------'));
             runSequence('downloadHtml', 'criticalHtml', 'criticalPhp', 'deleteTemp', 'critical');
             currentSourceIndex++;
         } else {
-            console.log('-------------- END PROCESS -----------------');
+            log.info(colors.bggreen('-------------- END PROCESS -----------------'));
         }
     });
 };

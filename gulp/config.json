@@ -8,5 +8,6 @@
     "sass": "assets/sass",
     "css": "assets/stylesheets",
     "scripts": "assets/javascripts",
-    "images": "assets/images"
+    "imagesSrcFolder": "assets/images/src",
+    "imagesDistFolder": "assets/images"
 }

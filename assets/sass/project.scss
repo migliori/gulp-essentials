@@ -9,8 +9,17 @@
  *
  * ---------------------------------------------------------------------------- */
 
-/* Import globals*/
-@import 'global/global.scss';
+/* Import color variables*/
+@import 'colors.scss';
+
+/* Import color palette*/
+@import 'palette.scss';
+
+/* Import color variables*/
+@import 'variables.scss';
+
+/* Import color components*/
+@import 'components.scss';
 
 h1 {
     font-family: 'Berkshire Swash', cursive;

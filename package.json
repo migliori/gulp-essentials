@@ -1,7 +1,7 @@
 {
   "name": "gulp-essentials",
-  "version": "1.0.0",
-  "description": "gulp essentials tasks",
+  "version": "1.0.1",
+  "description": "gulp essentials tasks: saas, scripts, images, critical (critical css for php/html files)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,7 +27,9 @@
     "run-sequence": "^2.2.0"
   },
   "dependencies": {
+    "ansi-colors": "^1.0.1",
     "cssnano": "^3.10.0",
+    "fancy-log": "^1.3.2",
     "gulp-cache": "^1.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-download": "0.0.1",
@@ -36,6 +38,8 @@
     "gulp-minify": "^2.1.0",
     "gulp-subtask": "^0.3.4",
     "mkdirp": "^0.5.1",
-    "promise": "^8.0.1"
+    "promise": "^8.0.1",
+    "sync-request": "^4.1.0",
+    "url-exists": "^1.0.3"
   }
 }

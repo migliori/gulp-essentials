@@ -19,9 +19,9 @@ module.exports = function(gulp, plugins, config) {
     // optimize images
     gulp.task('optimizeimages', function() {
         return gulp
-            .src([config.images + '/**/*', '!' + config.images + '/dist/']) // exclude dist folder
+            .src([config.imagesSrcFolder + '/**/*', '!' + config.imagesDistFolder + '/']) // exclude dist folder
             .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-            .pipe(gulp.dest(config.images + '/dist'));
+            .pipe(gulp.dest(config.imagesDistFolder));
     });
 
     // main task
