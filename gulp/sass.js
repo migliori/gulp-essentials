@@ -19,6 +19,7 @@ module.exports = function(gulp, plugins, config) {
     var rename = require('gulp-rename');
     var sass = require('gulp-sass');
     var sourcemaps = require('gulp-sourcemaps');
+    var strip = require('gulp-strip-comments');
 
     // Compile scss files
     gulp.task('scss', function() {
@@ -32,7 +33,7 @@ module.exports = function(gulp, plugins, config) {
     gulp.task('postcss', ['scss'], function() {
         // scss has to be finished before postcss
         return gulp
-            .src(config.css + '/*.css')
+            .src([config.css + '/*.css', '!' + config.css + '/*.min.css'])
             .pipe(sourcemaps.init())
             .pipe(postcss([autoprefixer({ browsers: ['last 4 versions'] })]))
             .pipe(sourcemaps.write('/maps'))
@@ -50,6 +51,7 @@ module.exports = function(gulp, plugins, config) {
                     suffix: '.min' // add *.min suffix
                 })
             )
+            .pipe(strip.text({ ignore: /url\([\w\s:\/=\-\+;,]*\)/g }))
             .pipe(gulp.dest(config.css));
     });
 
