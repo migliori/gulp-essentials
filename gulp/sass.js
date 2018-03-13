@@ -25,7 +25,9 @@ module.exports = function(gulp, plugins, config) {
     gulp.task('scss', function() {
         return gulp
             .src(config.sass + '/*.scss')
+            .pipe(sourcemaps.init())
             .pipe(sass().on('error', sass.logError))
+            .pipe(sourcemaps.write('/maps'))
             .pipe(gulp.dest(config.css)); // create normal CSS
     });
 
@@ -34,7 +36,7 @@ module.exports = function(gulp, plugins, config) {
         // scss has to be finished before postcss
         return gulp
             .src([config.css + '/*.css', '!' + config.css + '/*.min.css'])
-            .pipe(sourcemaps.init())
+            .pipe(sourcemaps.init({ loadMaps: true }))
             .pipe(postcss([autoprefixer({ browsers: ['last 4 versions'] })]))
             .pipe(sourcemaps.write('/maps'))
             .pipe(gulp.dest(config.css));
