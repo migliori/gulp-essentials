@@ -142,20 +142,8 @@ module.exports = function(gulp, plugins, config) {
                     ignore: options.ignoreCssRules,
                     include: options.forceCssRules,
                     timeout: 120000,
-                    dimensions: [
-                        {
-                            width: 320,
-                            height: 480
-                        },
-                        {
-                            width: 768,
-                            height: 1024
-                        },
-                        {
-                            width: 1280,
-                            height: 960
-                        }
-                    ]
+                    width: 1280,
+                    height: 960
                 })
             )
             .on('error', function(err) {
@@ -174,6 +162,12 @@ module.exports = function(gulp, plugins, config) {
         return gulp
             .src(options.srcDir + '/critical-*.php')
             .pipe(
+                plugins.rename(function(path) {
+                    path.extname = '.html';
+                })
+            )
+            .pipe(gulp.dest(options.srcDir))
+            .pipe(
                 critical({
                     base: config.baseDir,
                     extract: false,
@@ -182,20 +176,8 @@ module.exports = function(gulp, plugins, config) {
                     ignore: options.ignoreCssRules,
                     include: options.forceCssRules,
                     timeout: 120000,
-                    dimensions: [
-                        {
-                            width: 320,
-                            height: 480
-                        },
-                        {
-                            width: 768,
-                            height: 1024
-                        },
-                        {
-                            width: 1280,
-                            height: 960
-                        }
-                    ]
+                    width: 1280,
+                    height: 960
                 })
             )
             .on('error', function(err) {
