@@ -1,13 +1,10 @@
 {
     "tasksPath": "./gulp",
-
-    "baseDir": ".",
-    "baseUrl": "http://gulp-essentials",
-    "baseCombinedName": "main",
-
-    "sass": "assets/sass",
-    "css": "assets/stylesheets",
-    "scripts": "assets/javascripts",
-    "imagesSrcFolder": "assets/images/src",
-    "imagesDistFolder": "assets/images"
+    "baseDir": "./",
+    "baseUrl": "http://localhost/",
+    "baseCombinedName": "all",
+    "baseCombinedDeferName": "all-defer",
+    "sass": "assets/sass/",
+    "css": "assets/stylesheets/",
+    "scripts": "assets/javascripts/"
 }

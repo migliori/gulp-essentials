@@ -55,14 +55,12 @@ gulp-essentials/
 ├── package.json
 ├── README.md
 ├── assets/
-│   ├── images/
 │   ├── javascripts/
 │   ├── sass
 │   └── stylesheets
 ├── gulp/
 │   ├── config.json
 │   ├── critical.js
-│   ├── images.js
 │   ├── sass.js
 │   └── scripts.js
 └── test-dir
@@ -92,11 +90,6 @@ The main `gulpfile.js` file loads all tasks and defines global tasks (`watch`, `
  * **combinejs** // Concatenates files - [https://github.com/contra/gulp-concat](https://github.com/contra/gulp-concat)
  * **scripts** [main task]: **`minifyjs`** => **`combinejs`**
  
-* ### gulp images
-
- * **optimizeimages** // Optimize images - [https://github.com/sindresorhus/gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
- * **images** [main task]: **`optimizeimages`**
-
 * ### gulp critical
  [Critical CSS](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery) is an important feature.
 
